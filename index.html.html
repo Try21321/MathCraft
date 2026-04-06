@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>MathCraft</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container text-center game">
+
+<h1>🧱 MathCraft</h1>
+
+<div class="top d-flex justify-content-around">
+  ⭐ <span id="score">0</span>
+  📈 <span id="level">1</span>
+</div>
+
+<div class="progress mt-2">
+  <div id="progress"></div>
+</div>
+
+<div class="modes mt-3">
+  <button onclick="setMode('normal')">➕</button>
+  <button onclick="setMode('symbols')">🔣</button>
+  <button onclick="setMode('craft')">🧱</button>
+  <button onclick="setMode('boss')">🐉</button>
+</div>
+
+<!-- БОСС -->
+<div id="bossBox" class="boss hidden mt-3">
+  <img src="https://i.pinimg.com/736x/fc/23/31/fc23319daa4905ae21afabf08507ebf5.jpg" id="bossImg">
+  <div class="hp mt-2">
+    <div id="hp"></div>
+  </div>
+</div>
+
+<!-- ЗАДАНИЕ -->
+<div class="task-block mt-3" id="task">Выбери режим</div>
+
+<!-- СИМВОЛЫ -->
+<div id="symbols" class="hidden mt-2">
+  <button onclick="pick('+')">+</button>
+  <button onclick="pick('-')">-</button>
+  <button onclick="pick('*')">×</button>
+  <button onclick="pick('/')">÷</button>
+</div>
+
+<input id="answer" class="form-control mt-2" >
+
+<button class="btn btn-success mt-2" onclick="check()">OK</button>
+
+<div class="inventory mt-3" id="inv"></div>
+
+</div>
+
+<!-- СОНЯ -->
+<div id="sonyaModal" class="modal hidden">
+  <div class="modal-content">
+    <img class="sonya" src="https://mcpe-dl.org/wp-content/uploads/2026/03/svinka-ai-assistant-minecraft-870x400.jpg">
+    <div class="dialog">
+      <p id="sonyaText"></p>
+      <button onclick="closeSonya()">Продолжить</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
